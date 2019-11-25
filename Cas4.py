@@ -19,7 +19,7 @@ def analyseLog(startdate,enddate):
             (date, nbvisit) = getNextCount()
             date2 = datetime.strptime(date, "%d/%m/%y")
             if date2 >= startdate and date2 <= enddate:
-                data[getWeekDayFromDate(date)] = data[getWeekDayFromDate(date)] + nbvisit
+                data[int(getWeekDayFromDate(date))] = int(data[int(getWeekDayFromDate(date))]) + int(nbvisit)
         return data.index(min(data))
     else:
         return "Error"
